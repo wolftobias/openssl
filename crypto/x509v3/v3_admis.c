@@ -238,6 +238,9 @@ ASN1_SEQUENCE(MONETARY_LIMIT_SYNTAX) = {
 
 IMPLEMENT_ASN1_FUNCTIONS(MONETARY_LIMIT_SYNTAX)
 
+static int i2r_MONETARY_LIMIT_SYNTAX(const struct v3_ext_method *method, void *in,
+                                BIO *bp, int ind);
+
 const X509V3_EXT_METHOD v3_ext_monetaryLimit = {
     NID_id_commonpki_at_monetaryLimit,   /* .ext_nid = */
     0,                      /* .ext_flags = */
@@ -247,7 +250,42 @@ const X509V3_EXT_METHOD v3_ext_monetaryLimit = {
     NULL,                   /* .s2i = */
     NULL,                   /* .i2v = */
     NULL,                   /* .v2i = */
-    NULL, /*&i2r_ADMISSION_SYNTAX,*/  /* .i2r = */
+    i2r_MONETARY_LIMIT_SYNTAX, /*&i2r_ADMISSION_SYNTAX,*/  /* .i2r = */
     NULL,                   /* .r2i = */
     NULL                    /* extension-specific data */
 };
+
+static int i2r_MONETARY_LIMIT_SYNTAX(const struct v3_ext_method *method, void *in,
+                                BIO *bp, int ind)
+{
+    MONETARY_LIMIT_SYNTAX* monetaryLimit = (MONETARY_LIMIT_SYNTAX *)in;
+    //int i, j, k;
+    
+    if (monetaryLimit->currency != NULL) {
+        if (BIO_printf(bp, "%*scurrency:\n", ind, "") <= 0
+            || BIO_printf(bp, "%*s  ", ind, "") <= 0
+            || GENERAL_NAME_print(bp, monetaryLimit->currency) <= 0
+            || BIO_printf(bp, "\n") <= 0)
+            goto err;
+    }
+
+        if (monetaryLimit->amount != NULL) {
+        if (BIO_printf(bp, "%*samount:\n", ind, "") <= 0
+            || BIO_printf(bp, "%*s  ", ind, "") <= 0
+            || GENERAL_NAME_print(bp, monetaryLimit->amount) <= 0
+            || BIO_printf(bp, "\n") <= 0)
+            goto err;
+    }
+
+        if (monetaryLimit->exponent != NULL) {
+        if (BIO_printf(bp, "%*sexponent:\n", ind, "") <= 0
+            || BIO_printf(bp, "%*s  ", ind, "") <= 0
+            || GENERAL_NAME_print(bp, monetaryLimit->exponent) <= 0
+            || BIO_printf(bp, "\n") <= 0)
+            goto err;
+    }
+    return 1;
+
+err:
+    return -1;
+}
