@@ -362,8 +362,6 @@ ASN1_CHOICE(DECLARATION_OF_MAJORITY_SYNTAX) = {
 
 IMPLEMENT_ASN1_FUNCTIONS(DECLARATION_OF_MAJORITY_SYNTAX)
 
-// u. fullAgeOfCountry
-
 /*
 static int i2r_PROCURATION_SYNTAX(const struct v3_ext_method *method, void *in,
                                 BIO *bp, int ind);
