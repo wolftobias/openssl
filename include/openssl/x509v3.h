@@ -945,10 +945,13 @@ typedef struct FullAgeAtCountry_st {
     ASN1_PRINTABLESTRING* country;
 } FULL_AGE_AT_COUNTRY;
 
-typedef struct DeclarationOfMajority_st { 
-    ASN1_INTEGER* notYoungerThen;
-    FULL_AGE_AT_COUNTRY* fullAgeOfCountry; /* union hier ?*/
-    ASN1_GENERALIZEDTIME* dateOfBirth; 
+typedef struct DeclarationOfMajority_st {
+    int type;
+    union {
+        ASN1_INTEGER* notYoungerThen;
+        FULL_AGE_AT_COUNTRY* fullAgeAtCountry;
+        ASN1_GENERALIZEDTIME* dateOfBirth; 
+    } u;
 } DECLARATION_OF_MAJORITY_SYNTAX;
 
 DECLARE_ASN1_ITEM(FULL_AGE_AT_COUNTRY)
