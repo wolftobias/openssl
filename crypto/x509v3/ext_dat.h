@@ -25,3 +25,4 @@ extern const X509V3_EXT_METHOD v3_tls_feature;
 extern const X509V3_EXT_METHOD v3_ext_admission;
 extern const X509V3_EXT_METHOD v3_ext_restriction;
 extern const X509V3_EXT_METHOD v3_ext_additionalInformation;
+extern const X509V3_EXT_METHOD v3_ext_monetaryLimit;

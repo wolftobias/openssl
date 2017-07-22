@@ -229,3 +229,25 @@ const X509V3_EXT_METHOD v3_ext_additionalInformation = {
     NULL,                   /* .r2i = */
     NULL                    /* extension-specific data */
 };
+
+ASN1_SEQUENCE(MONETARY_LIMIT_SYNTAX) = {
+    ASN1_SIMPLE(MONETARY_LIMIT_SYNTAX, currency, ASN1_PRINTABLESTRING),
+    ASN1_SIMPLE(MONETARY_LIMIT_SYNTAX, amount, ASN1_INTEGER),
+    ASN1_SIMPLE(MONETARY_LIMIT_SYNTAX, exponent, ASN1_INTEGER),
+} ASN1_SEQUENCE_END(MONETARY_LIMIT_SYNTAX)
+
+IMPLEMENT_ASN1_FUNCTIONS(MONETARY_LIMIT_SYNTAX)
+
+const X509V3_EXT_METHOD v3_ext_monetaryLimit = {
+    NID_id_commonpki_at_monetaryLimit,   /* .ext_nid = */
+    0,                      /* .ext_flags = */
+    ASN1_ITEM_ref(MONETARY_LIMIT_SYNTAX), /* .it = */
+    NULL, NULL, NULL, NULL,
+    NULL,                   /* .i2s = */
+    NULL,                   /* .s2i = */
+    NULL,                   /* .i2v = */
+    NULL,                   /* .v2i = */
+    NULL, /*&i2r_ADMISSION_SYNTAX,*/  /* .i2r = */
+    NULL,                   /* .r2i = */
+    NULL                    /* extension-specific data */
+};
