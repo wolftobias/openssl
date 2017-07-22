@@ -10,7 +10,7 @@
  */
 
 /* Serialized OID's */
-static const unsigned char so[7168] = {
+static const unsigned char so[7237] = {
     0x2A,0x86,0x48,0x86,0xF7,0x0D,                 /* [    0] OBJ_rsadsi */
     0x2A,0x86,0x48,0x86,0xF7,0x0D,0x01,            /* [    6] OBJ_pkcs */
     0x2A,0x86,0x48,0x86,0xF7,0x0D,0x02,0x02,       /* [   13] OBJ_md2 */
@@ -983,36 +983,49 @@ static const unsigned char so[7168] = {
     0x55,0x04,0x62,                                /* [ 6919] OBJ_countryCode3c */
     0x55,0x04,0x63,                                /* [ 6922] OBJ_countryCode3n */
     0x55,0x04,0x64,                                /* [ 6925] OBJ_dnsName */
-    0x2B,0x24,0x08,0x03,0x03,                      /* [ 6928] OBJ_x509ExtAdmission */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x05,  /* [ 6933] OBJ_sha512_224 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x06,  /* [ 6942] OBJ_sha512_256 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x07,  /* [ 6951] OBJ_sha3_224 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x08,  /* [ 6960] OBJ_sha3_256 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x09,  /* [ 6969] OBJ_sha3_384 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x0A,  /* [ 6978] OBJ_sha3_512 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x0B,  /* [ 6987] OBJ_shake128 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x0C,  /* [ 6996] OBJ_shake256 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x0D,  /* [ 7005] OBJ_hmac_sha3_224 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x0E,  /* [ 7014] OBJ_hmac_sha3_256 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x0F,  /* [ 7023] OBJ_hmac_sha3_384 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x10,  /* [ 7032] OBJ_hmac_sha3_512 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x03,  /* [ 7041] OBJ_dsa_with_SHA384 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x04,  /* [ 7050] OBJ_dsa_with_SHA512 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x05,  /* [ 7059] OBJ_dsa_with_SHA3_224 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x06,  /* [ 7068] OBJ_dsa_with_SHA3_256 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x07,  /* [ 7077] OBJ_dsa_with_SHA3_384 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x08,  /* [ 7086] OBJ_dsa_with_SHA3_512 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x09,  /* [ 7095] OBJ_ecdsa_with_SHA3_224 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x0A,  /* [ 7104] OBJ_ecdsa_with_SHA3_256 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x0B,  /* [ 7113] OBJ_ecdsa_with_SHA3_384 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x0C,  /* [ 7122] OBJ_ecdsa_with_SHA3_512 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x0D,  /* [ 7131] OBJ_RSA_SHA3_224 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x0E,  /* [ 7140] OBJ_RSA_SHA3_256 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x0F,  /* [ 7149] OBJ_RSA_SHA3_284 */
-    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x10,  /* [ 7158] OBJ_RSA_SHA3_512 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x05,  /* [ 6928] OBJ_sha512_224 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x06,  /* [ 6937] OBJ_sha512_256 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x07,  /* [ 6946] OBJ_sha3_224 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x08,  /* [ 6955] OBJ_sha3_256 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x09,  /* [ 6964] OBJ_sha3_384 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x0A,  /* [ 6973] OBJ_sha3_512 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x0B,  /* [ 6982] OBJ_shake128 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x0C,  /* [ 6991] OBJ_shake256 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x0D,  /* [ 7000] OBJ_hmac_sha3_224 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x0E,  /* [ 7009] OBJ_hmac_sha3_256 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x0F,  /* [ 7018] OBJ_hmac_sha3_384 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x02,0x10,  /* [ 7027] OBJ_hmac_sha3_512 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x03,  /* [ 7036] OBJ_dsa_with_SHA384 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x04,  /* [ 7045] OBJ_dsa_with_SHA512 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x05,  /* [ 7054] OBJ_dsa_with_SHA3_224 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x06,  /* [ 7063] OBJ_dsa_with_SHA3_256 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x07,  /* [ 7072] OBJ_dsa_with_SHA3_384 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x08,  /* [ 7081] OBJ_dsa_with_SHA3_512 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x09,  /* [ 7090] OBJ_ecdsa_with_SHA3_224 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x0A,  /* [ 7099] OBJ_ecdsa_with_SHA3_256 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x0B,  /* [ 7108] OBJ_ecdsa_with_SHA3_384 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x0C,  /* [ 7117] OBJ_ecdsa_with_SHA3_512 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x0D,  /* [ 7126] OBJ_RSA_SHA3_224 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x0E,  /* [ 7135] OBJ_RSA_SHA3_256 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x0F,  /* [ 7144] OBJ_RSA_SHA3_284 */
+    0x60,0x86,0x48,0x01,0x65,0x03,0x04,0x03,0x10,  /* [ 7153] OBJ_RSA_SHA3_512 */
+    0x2B,0x24,0x08,0x03,0x01,                      /* [ 7162] OBJ_id_commonpki_at_dateOfCertGen */
+    0x2B,0x24,0x08,0x03,0x02,                      /* [ 7167] OBJ_id_commonpki_at_procuration */
+    0x2B,0x24,0x08,0x03,0x03,                      /* [ 7172] OBJ_id_commonpki_at_admission */
+    0x2B,0x24,0x08,0x03,0x04,                      /* [ 7177] OBJ_id_commonpki_at_monetaryLimit */
+    0x2B,0x24,0x08,0x03,0x05,                      /* [ 7182] OBJ_id_commonpki_at_declarationOfMajority */
+    0x2B,0x24,0x08,0x03,0x06,                      /* [ 7187] OBJ_ICSSN */
+    0x2B,0x24,0x08,0x03,0x08,                      /* [ 7192] OBJ_id_commonpki_at_restriction */
+    0x2B,0x24,0x08,0x03,0x0E,                      /* [ 7197] OBJ_id_commonpki_at_nameAtBirth */
+    0x2B,0x24,0x08,0x03,0x0F,                      /* [ 7202] OBJ_id_commonpki_at_additionalInformation */
+    0x04,0x00,0x8E,0x46,0x01,                      /* [ 7207] OBJ_id_etsi_qcs */
+    0x04,0x00,0x8E,0x46,0x01,0x01,                 /* [ 7212] OBJ_id_etsi_qcs_QcCompliance */
+    0x04,0x00,0x8E,0x46,0x01,0x02,                 /* [ 7218] OBJ_id_etsi_qcs_QcLimitValue */
+    0x04,0x00,0x8E,0x46,0x01,0x03,                 /* [ 7224] OBJ_id_etsi_qcs_QcRetentionPeriod */
+    0x04,0x00,0x8E,0x46,0x01,0x04,                 /* [ 7230] OBJ_id_etsi_qcs_QcSSCD */
 };
 
-#define NUM_NID 1120
+#define NUM_NID 1134
 static const ASN1_OBJECT nid_objs[NUM_NID] = {
     {"UNDEF", "undefined", NID_undef},
     {"rsadsi", "RSA Data Security, Inc.", NID_rsadsi, 6, &so[0]},
@@ -2107,36 +2120,50 @@ static const ASN1_OBJECT nid_objs[NUM_NID] = {
     {"c3", "countryCode3c", NID_countryCode3c, 3, &so[6919]},
     {"n3", "countryCode3n", NID_countryCode3n, 3, &so[6922]},
     {"dnsName", "dnsName", NID_dnsName, 3, &so[6925]},
-    {"x509ExtAdmission", "Professional Information or basis for Admission", NID_x509ExtAdmission, 5, &so[6928]},
-    {"SHA512-224", "sha512-224", NID_sha512_224, 9, &so[6933]},
-    {"SHA512-256", "sha512-256", NID_sha512_256, 9, &so[6942]},
-    {"SHA3-224", "sha3-224", NID_sha3_224, 9, &so[6951]},
-    {"SHA3-256", "sha3-256", NID_sha3_256, 9, &so[6960]},
-    {"SHA3-384", "sha3-384", NID_sha3_384, 9, &so[6969]},
-    {"SHA3-512", "sha3-512", NID_sha3_512, 9, &so[6978]},
-    {"SHAKE128", "shake128", NID_shake128, 9, &so[6987]},
-    {"SHAKE256", "shake256", NID_shake256, 9, &so[6996]},
-    {"id-hmacWithSHA3-224", "hmac-sha3-224", NID_hmac_sha3_224, 9, &so[7005]},
-    {"id-hmacWithSHA3-256", "hmac-sha3-256", NID_hmac_sha3_256, 9, &so[7014]},
-    {"id-hmacWithSHA3-384", "hmac-sha3-384", NID_hmac_sha3_384, 9, &so[7023]},
-    {"id-hmacWithSHA3-512", "hmac-sha3-512", NID_hmac_sha3_512, 9, &so[7032]},
-    {"id-dsa-with-sha384", "dsa_with_SHA384", NID_dsa_with_SHA384, 9, &so[7041]},
-    {"id-dsa-with-sha512", "dsa_with_SHA512", NID_dsa_with_SHA512, 9, &so[7050]},
-    {"id-dsa-with-sha3-224", "dsa_with_SHA3-224", NID_dsa_with_SHA3_224, 9, &so[7059]},
-    {"id-dsa-with-sha3-256", "dsa_with_SHA3-256", NID_dsa_with_SHA3_256, 9, &so[7068]},
-    {"id-dsa-with-sha3-384", "dsa_with_SHA3-384", NID_dsa_with_SHA3_384, 9, &so[7077]},
-    {"id-dsa-with-sha3-512", "dsa_with_SHA3-512", NID_dsa_with_SHA3_512, 9, &so[7086]},
-    {"id-ecdsa-with-sha3-224", "ecdsa_with_SHA3-224", NID_ecdsa_with_SHA3_224, 9, &so[7095]},
-    {"id-ecdsa-with-sha3-256", "ecdsa_with_SHA3-256", NID_ecdsa_with_SHA3_256, 9, &so[7104]},
-    {"id-ecdsa-with-sha3-384", "ecdsa_with_SHA3-384", NID_ecdsa_with_SHA3_384, 9, &so[7113]},
-    {"id-ecdsa-with-sha3-512", "ecdsa_with_SHA3-512", NID_ecdsa_with_SHA3_512, 9, &so[7122]},
-    {"id-rsassa-pkcs1-v1_5-with-sha3-224", "RSA-SHA3-224", NID_RSA_SHA3_224, 9, &so[7131]},
-    {"id-rsassa-pkcs1-v1_5-with-sha3-256", "RSA-SHA3-256", NID_RSA_SHA3_256, 9, &so[7140]},
-    {"id-rsassa-pkcs1-v1_5-with-sha3-384", "RSA-SHA3-284", NID_RSA_SHA3_284, 9, &so[7149]},
-    {"id-rsassa-pkcs1-v1_5-with-sha3-512", "RSA-SHA3-512", NID_RSA_SHA3_512, 9, &so[7158]},
+    { NULL, NULL, NID_undef },
+    {"SHA512-224", "sha512-224", NID_sha512_224, 9, &so[6928]},
+    {"SHA512-256", "sha512-256", NID_sha512_256, 9, &so[6937]},
+    {"SHA3-224", "sha3-224", NID_sha3_224, 9, &so[6946]},
+    {"SHA3-256", "sha3-256", NID_sha3_256, 9, &so[6955]},
+    {"SHA3-384", "sha3-384", NID_sha3_384, 9, &so[6964]},
+    {"SHA3-512", "sha3-512", NID_sha3_512, 9, &so[6973]},
+    {"SHAKE128", "shake128", NID_shake128, 9, &so[6982]},
+    {"SHAKE256", "shake256", NID_shake256, 9, &so[6991]},
+    {"id-hmacWithSHA3-224", "hmac-sha3-224", NID_hmac_sha3_224, 9, &so[7000]},
+    {"id-hmacWithSHA3-256", "hmac-sha3-256", NID_hmac_sha3_256, 9, &so[7009]},
+    {"id-hmacWithSHA3-384", "hmac-sha3-384", NID_hmac_sha3_384, 9, &so[7018]},
+    {"id-hmacWithSHA3-512", "hmac-sha3-512", NID_hmac_sha3_512, 9, &so[7027]},
+    {"id-dsa-with-sha384", "dsa_with_SHA384", NID_dsa_with_SHA384, 9, &so[7036]},
+    {"id-dsa-with-sha512", "dsa_with_SHA512", NID_dsa_with_SHA512, 9, &so[7045]},
+    {"id-dsa-with-sha3-224", "dsa_with_SHA3-224", NID_dsa_with_SHA3_224, 9, &so[7054]},
+    {"id-dsa-with-sha3-256", "dsa_with_SHA3-256", NID_dsa_with_SHA3_256, 9, &so[7063]},
+    {"id-dsa-with-sha3-384", "dsa_with_SHA3-384", NID_dsa_with_SHA3_384, 9, &so[7072]},
+    {"id-dsa-with-sha3-512", "dsa_with_SHA3-512", NID_dsa_with_SHA3_512, 9, &so[7081]},
+    {"id-ecdsa-with-sha3-224", "ecdsa_with_SHA3-224", NID_ecdsa_with_SHA3_224, 9, &so[7090]},
+    {"id-ecdsa-with-sha3-256", "ecdsa_with_SHA3-256", NID_ecdsa_with_SHA3_256, 9, &so[7099]},
+    {"id-ecdsa-with-sha3-384", "ecdsa_with_SHA3-384", NID_ecdsa_with_SHA3_384, 9, &so[7108]},
+    {"id-ecdsa-with-sha3-512", "ecdsa_with_SHA3-512", NID_ecdsa_with_SHA3_512, 9, &so[7117]},
+    {"id-rsassa-pkcs1-v1_5-with-sha3-224", "RSA-SHA3-224", NID_RSA_SHA3_224, 9, &so[7126]},
+    {"id-rsassa-pkcs1-v1_5-with-sha3-256", "RSA-SHA3-256", NID_RSA_SHA3_256, 9, &so[7135]},
+    {"id-rsassa-pkcs1-v1_5-with-sha3-384", "RSA-SHA3-284", NID_RSA_SHA3_284, 9, &so[7144]},
+    {"id-rsassa-pkcs1-v1_5-with-sha3-512", "RSA-SHA3-512", NID_RSA_SHA3_512, 9, &so[7153]},
+    {"id-commonpki-at-dateOfCertGen", "Date of Certificate Generation", NID_id_commonpki_at_dateOfCertGen, 5, &so[7162]},
+    {"id-commonpki-at-procuration", "Procuration Information", NID_id_commonpki_at_procuration, 5, &so[7167]},
+    {"id-commonpki-at-admission", "Admission Information", NID_id_commonpki_at_admission, 5, &so[7172]},
+    {"id-commonpki-at-monetaryLimit", "Monetary Limit", NID_id_commonpki_at_monetaryLimit, 5, &so[7177]},
+    {"id-commonpki-at-declarationOfMajority", "Declaration of Majority", NID_id_commonpki_at_declarationOfMajority, 5, &so[7182]},
+    {"id-commonpki-at-icssn", "ICSSN", NID_ICSSN, 5, &so[7187]},
+    {"id-commonpki-at-restriction", "Restriction Information", NID_id_commonpki_at_restriction, 5, &so[7192]},
+    {"id-commonpki-at-nameAtBirth", "Name at Birth", NID_id_commonpki_at_nameAtBirth, 5, &so[7197]},
+    {"id-commonpki-at-additionalInformation", "Additional Information", NID_id_commonpki_at_additionalInformation, 5, &so[7202]},
+    {"id-etsi-qcs", "id-etsi-qcs", NID_id_etsi_qcs, 5, &so[7207]},
+    {"id-etsi-qcs-QcCompliance", "QC Compliance", NID_id_etsi_qcs_QcCompliance, 6, &so[7212]},
+    {"id-etsi-qcs-QcLimitValue", "QC Limit Value", NID_id_etsi_qcs_QcLimitValue, 6, &so[7218]},
+    {"id-etsi-qcs-QcRetentionPeriod", "QC Retention Period", NID_id_etsi_qcs_QcRetentionPeriod, 6, &so[7224]},
+    {"id-etsi-qcs-QcSSCD", "QC SSCD", NID_id_etsi_qcs_QcSSCD, 6, &so[7230]},
 };
 
-#define NUM_SN 1111
+#define NUM_SN 1124
 static const unsigned int sn_objs[NUM_SN] = {
      364,    /* "AD_DVCS" */
      419,    /* "AES-128-CBC" */
@@ -2691,6 +2718,15 @@ static const unsigned int sn_objs[NUM_SN] = {
      332,    /* "id-cmc-senderNonce" */
      327,    /* "id-cmc-statusInfo" */
      331,    /* "id-cmc-transactionId" */
+    1128,    /* "id-commonpki-at-additionalInformation" */
+    1122,    /* "id-commonpki-at-admission" */
+    1120,    /* "id-commonpki-at-dateOfCertGen" */
+    1124,    /* "id-commonpki-at-declarationOfMajority" */
+    1125,    /* "id-commonpki-at-icssn" */
+    1123,    /* "id-commonpki-at-monetaryLimit" */
+    1127,    /* "id-commonpki-at-nameAtBirth" */
+    1121,    /* "id-commonpki-at-procuration" */
+    1126,    /* "id-commonpki-at-restriction" */
      787,    /* "id-ct-asciiTextWithCRLF" */
     1060,    /* "id-ct-xml" */
     1108,    /* "id-dsa-with-sha3-224" */
@@ -2704,6 +2740,11 @@ static const unsigned int sn_objs[NUM_SN] = {
     1113,    /* "id-ecdsa-with-sha3-256" */
     1114,    /* "id-ecdsa-with-sha3-384" */
     1115,    /* "id-ecdsa-with-sha3-512" */
+    1129,    /* "id-etsi-qcs" */
+    1130,    /* "id-etsi-qcs-QcCompliance" */
+    1131,    /* "id-etsi-qcs-QcLimitValue" */
+    1132,    /* "id-etsi-qcs-QcRetentionPeriod" */
+    1133,    /* "id-etsi-qcs-QcSSCD" */
      508,    /* "id-hex-multipart-message" */
      507,    /* "id-hex-partial-message" */
     1102,    /* "id-hmacWithSHA3-224" */
@@ -3248,14 +3289,15 @@ static const unsigned int sn_objs[NUM_SN] = {
      503,    /* "x500UniqueIdentifier" */
      158,    /* "x509Certificate" */
      160,    /* "x509Crl" */
-    1093,    /* "x509ExtAdmission" */
 };
 
-#define NUM_LN 1111
+#define NUM_LN 1124
 static const unsigned int ln_objs[NUM_LN] = {
      363,    /* "AD Time Stamping" */
      405,    /* "ANSI X9.62" */
      368,    /* "Acceptable OCSP Responses" */
+    1128,    /* "Additional Information" */
+    1122,    /* "Admission Information" */
      910,    /* "Any Extended Key Usage" */
      664,    /* "Any language" */
      177,    /* "Authority Information Access" */
@@ -3270,6 +3312,8 @@ static const unsigned int ln_objs[NUM_LN] = {
      131,    /* "Code Signing" */
     1024,    /* "Ctrl/Provision WAP Termination" */
     1023,    /* "Ctrl/provision WAP Access" */
+    1120,    /* "Date of Certificate Generation" */
+    1124,    /* "Declaration of Majority" */
      783,    /* "Diffie-Hellman based MAC" */
      382,    /* "Directory" */
      392,    /* "Domain" */
@@ -3314,6 +3358,7 @@ static const unsigned int ln_objs[NUM_LN] = {
      431,    /* "Hold Instruction None" */
      433,    /* "Hold Instruction Reject" */
      634,    /* "ICC or token signature" */
+    1125,    /* "ICSSN" */
     1004,    /* "INN" */
      294,    /* "IPSec End System" */
      295,    /* "IPSec Tunnel" */
@@ -3337,8 +3382,10 @@ static const unsigned int ln_objs[NUM_LN] = {
      648,    /* "Microsoft Smartcardlogin" */
      136,    /* "Microsoft Trust List Signing" */
      649,    /* "Microsoft Universal Principal Name" */
+    1123,    /* "Monetary Limit" */
      393,    /* "NULL" */
      404,    /* "NULL" */
+    1127,    /* "Name at Birth" */
       72,    /* "Netscape Base Url" */
       76,    /* "Netscape CA Policy Url" */
       74,    /* "Netscape CA Revocation Url" */
@@ -3369,14 +3416,19 @@ static const unsigned int ln_objs[NUM_LN] = {
      164,    /* "Policy Qualifier CPS" */
      165,    /* "Policy Qualifier User Notice" */
      385,    /* "Private" */
-    1093,    /* "Professional Information or basis for Admission" */
+    1121,    /* "Procuration Information" */
      663,    /* "Proxy Certificate Information" */
+    1130,    /* "QC Compliance" */
+    1131,    /* "QC Limit Value" */
+    1132,    /* "QC Retention Period" */
+    1133,    /* "QC SSCD" */
        1,    /* "RSA Data Security, Inc." */
        2,    /* "RSA Data Security, Inc. PKCS" */
     1116,    /* "RSA-SHA3-224" */
     1117,    /* "RSA-SHA3-256" */
     1118,    /* "RSA-SHA3-284" */
     1119,    /* "RSA-SHA3-512" */
+    1126,    /* "Restriction Information" */
      188,    /* "S/MIME" */
      167,    /* "S/MIME Capabilities" */
     1006,    /* "SNILS" */
@@ -3821,6 +3873,7 @@ static const unsigned int ln_objs[NUM_LN] = {
      787,    /* "id-ct-asciiTextWithCRLF" */
     1060,    /* "id-ct-xml" */
      408,    /* "id-ecPublicKey" */
+    1129,    /* "id-etsi-qcs" */
      508,    /* "id-hex-multipart-message" */
      507,    /* "id-hex-partial-message" */
      260,    /* "id-it" */
@@ -4366,7 +4419,7 @@ static const unsigned int ln_objs[NUM_LN] = {
      125,    /* "zlib compression" */
 };
 
-#define NUM_OBJ 1005
+#define NUM_OBJ 1018
 static const unsigned int obj_objs[NUM_OBJ] = {
        0,    /* OBJ_undef                        0 */
      181,    /* OBJ_iso                          1 */
@@ -4610,6 +4663,7 @@ static const unsigned int obj_objs[NUM_OBJ] = {
      637,    /* OBJ_set_brand_Diners             2 23 42 8 30 */
      638,    /* OBJ_set_brand_AmericanExpress    2 23 42 8 34 */
      639,    /* OBJ_set_brand_JCB                2 23 42 8 35 */
+    1129,    /* OBJ_id_etsi_qcs                  0 4 0 1862 1 */
      805,    /* OBJ_cryptopro                    1 2 643 2 2 */
      806,    /* OBJ_cryptocom                    1 2 643 2 9 */
      974,    /* OBJ_id_tc26                      1 2 643 7 1 */
@@ -4636,7 +4690,15 @@ static const unsigned int obj_objs[NUM_OBJ] = {
       70,    /* OBJ_dsaWithSHA1_2                1 3 14 3 2 27 */
      115,    /* OBJ_sha1WithRSA                  1 3 14 3 2 29 */
      117,    /* OBJ_ripemd160                    1 3 36 3 2 1 */
-    1093,    /* OBJ_x509ExtAdmission             1 3 36 8 3 3 */
+    1120,    /* OBJ_id_commonpki_at_dateOfCertGen 1 3 36 8 3 1 */
+    1121,    /* OBJ_id_commonpki_at_procuration  1 3 36 8 3 2 */
+    1122,    /* OBJ_id_commonpki_at_admission    1 3 36 8 3 3 */
+    1123,    /* OBJ_id_commonpki_at_monetaryLimit 1 3 36 8 3 4 */
+    1124,    /* OBJ_id_commonpki_at_declarationOfMajority 1 3 36 8 3 5 */
+    1125,    /* OBJ_ICSSN                        1 3 36 8 3 6 */
+    1126,    /* OBJ_id_commonpki_at_restriction  1 3 36 8 3 8 */
+    1127,    /* OBJ_id_commonpki_at_nameAtBirth  1 3 36 8 3 14 */
+    1128,    /* OBJ_id_commonpki_at_additionalInformation 1 3 36 8 3 15 */
      143,    /* OBJ_sxnet                        1 3 101 1 4 1 */
      721,    /* OBJ_sect163k1                    1 3 132 0 1 */
      722,    /* OBJ_sect163r1                    1 3 132 0 2 */
@@ -4688,6 +4750,10 @@ static const unsigned int obj_objs[NUM_OBJ] = {
      743,    /* OBJ_wap_wsg_idm_ecid_wtls10      2 23 43 1 4 10 */
      744,    /* OBJ_wap_wsg_idm_ecid_wtls11      2 23 43 1 4 11 */
      745,    /* OBJ_wap_wsg_idm_ecid_wtls12      2 23 43 1 4 12 */
+    1130,    /* OBJ_id_etsi_qcs_QcCompliance     0 4 0 1862 1 1 */
+    1131,    /* OBJ_id_etsi_qcs_QcLimitValue     0 4 0 1862 1 2 */
+    1132,    /* OBJ_id_etsi_qcs_QcRetentionPeriod 0 4 0 1862 1 3 */
+    1133,    /* OBJ_id_etsi_qcs_QcSSCD           0 4 0 1862 1 4 */
      804,    /* OBJ_whirlpool                    1 0 10118 3 0 55 */
      773,    /* OBJ_kisa                         1 2 410 200004 */
      807,    /* OBJ_id_GostR3411_94_with_GostR3410_2001 1 2 643 2 2 3 */

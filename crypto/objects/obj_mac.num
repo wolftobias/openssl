@@ -1117,3 +1117,17 @@ RSA_SHA3_224		1116
 RSA_SHA3_256		1117
 RSA_SHA3_284		1118
 RSA_SHA3_512		1119
+id_commonpki_at_dateOfCertGen		1120
+id_commonpki_at_procuration		1121
+id_commonpki_at_admission		1122
+id_commonpki_at_monetaryLimit		1123
+id_commonpki_at_declarationOfMajority		1124
+ICSSN		1125
+id_commonpki_at_restriction		1126
+id_commonpki_at_nameAtBirth		1127
+id_commonpki_at_additionalInformation		1128
+id_etsi_qcs		1129
+id_etsi_qcs_QcCompliance		1130
+id_etsi_qcs_QcLimitValue		1131
+id_etsi_qcs_QcRetentionPeriod		1132
+id_etsi_qcs_QcSSCD		1133

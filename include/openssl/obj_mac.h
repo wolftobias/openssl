@@ -54,10 +54,74 @@
 #define NID_hmac_sha1           781
 #define OBJ_hmac_sha1           OBJ_identified_organization,6L,1L,5L,5L,8L,1L,2L
 
-#define SN_x509ExtAdmission             "x509ExtAdmission"
-#define LN_x509ExtAdmission             "Professional Information or basis for Admission"
-#define NID_x509ExtAdmission            1093
-#define OBJ_x509ExtAdmission            OBJ_identified_organization,36L,8L,3L,3L
+#define SN_id_commonpki_at_dateOfCertGen                "id-commonpki-at-dateOfCertGen"
+#define LN_id_commonpki_at_dateOfCertGen                "Date of Certificate Generation"
+#define NID_id_commonpki_at_dateOfCertGen               1120
+#define OBJ_id_commonpki_at_dateOfCertGen               OBJ_identified_organization,36L,8L,3L,1L
+
+#define SN_id_commonpki_at_procuration          "id-commonpki-at-procuration"
+#define LN_id_commonpki_at_procuration          "Procuration Information"
+#define NID_id_commonpki_at_procuration         1121
+#define OBJ_id_commonpki_at_procuration         OBJ_identified_organization,36L,8L,3L,2L
+
+#define SN_id_commonpki_at_admission            "id-commonpki-at-admission"
+#define LN_id_commonpki_at_admission            "Admission Information"
+#define NID_id_commonpki_at_admission           1122
+#define OBJ_id_commonpki_at_admission           OBJ_identified_organization,36L,8L,3L,3L
+
+#define SN_id_commonpki_at_monetaryLimit                "id-commonpki-at-monetaryLimit"
+#define LN_id_commonpki_at_monetaryLimit                "Monetary Limit"
+#define NID_id_commonpki_at_monetaryLimit               1123
+#define OBJ_id_commonpki_at_monetaryLimit               OBJ_identified_organization,36L,8L,3L,4L
+
+#define SN_id_commonpki_at_declarationOfMajority                "id-commonpki-at-declarationOfMajority"
+#define LN_id_commonpki_at_declarationOfMajority                "Declaration of Majority"
+#define NID_id_commonpki_at_declarationOfMajority               1124
+#define OBJ_id_commonpki_at_declarationOfMajority               OBJ_identified_organization,36L,8L,3L,5L
+
+#define SN_ICSSN                "id-commonpki-at-icssn"
+#define LN_ICSSN                "ICSSN"
+#define NID_ICSSN               1125
+#define OBJ_ICSSN               OBJ_identified_organization,36L,8L,3L,6L
+
+#define SN_id_commonpki_at_restriction          "id-commonpki-at-restriction"
+#define LN_id_commonpki_at_restriction          "Restriction Information"
+#define NID_id_commonpki_at_restriction         1126
+#define OBJ_id_commonpki_at_restriction         OBJ_identified_organization,36L,8L,3L,8L
+
+#define SN_id_commonpki_at_nameAtBirth          "id-commonpki-at-nameAtBirth"
+#define LN_id_commonpki_at_nameAtBirth          "Name at Birth"
+#define NID_id_commonpki_at_nameAtBirth         1127
+#define OBJ_id_commonpki_at_nameAtBirth         OBJ_identified_organization,36L,8L,3L,14L
+
+#define SN_id_commonpki_at_additionalInformation                "id-commonpki-at-additionalInformation"
+#define LN_id_commonpki_at_additionalInformation                "Additional Information"
+#define NID_id_commonpki_at_additionalInformation               1128
+#define OBJ_id_commonpki_at_additionalInformation               OBJ_identified_organization,36L,8L,3L,15L
+
+#define SN_id_etsi_qcs          "id-etsi-qcs"
+#define NID_id_etsi_qcs         1129
+#define OBJ_id_etsi_qcs         0L,4L,0L,1862L,1L
+
+#define SN_id_etsi_qcs_QcCompliance             "id-etsi-qcs-QcCompliance"
+#define LN_id_etsi_qcs_QcCompliance             "QC Compliance"
+#define NID_id_etsi_qcs_QcCompliance            1130
+#define OBJ_id_etsi_qcs_QcCompliance            OBJ_id_etsi_qcs,1L
+
+#define SN_id_etsi_qcs_QcLimitValue             "id-etsi-qcs-QcLimitValue"
+#define LN_id_etsi_qcs_QcLimitValue             "QC Limit Value"
+#define NID_id_etsi_qcs_QcLimitValue            1131
+#define OBJ_id_etsi_qcs_QcLimitValue            OBJ_id_etsi_qcs,2L
+
+#define SN_id_etsi_qcs_QcRetentionPeriod                "id-etsi-qcs-QcRetentionPeriod"
+#define LN_id_etsi_qcs_QcRetentionPeriod                "QC Retention Period"
+#define NID_id_etsi_qcs_QcRetentionPeriod               1132
+#define OBJ_id_etsi_qcs_QcRetentionPeriod               OBJ_id_etsi_qcs,3L
+
+#define SN_id_etsi_qcs_QcSSCD           "id-etsi-qcs-QcSSCD"
+#define LN_id_etsi_qcs_QcSSCD           "QC SSCD"
+#define NID_id_etsi_qcs_QcSSCD          1133
+#define OBJ_id_etsi_qcs_QcSSCD          OBJ_id_etsi_qcs,4L
 
 #define SN_certicom_arc         "certicom-arc"
 #define NID_certicom_arc                677
