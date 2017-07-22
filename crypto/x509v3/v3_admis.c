@@ -201,3 +201,31 @@ static int i2r_ADMISSION_SYNTAX(const struct v3_ext_method *method, void *in,
 err:
     return -1;
 }
+
+const X509V3_EXT_METHOD v3_ext_restriction = {
+    NID_id_commonpki_at_restriction,   /* .ext_nid = */
+    0,                      /* .ext_flags = */
+    ASN1_ITEM_ref(DIRECTORYSTRING), /* .it = */
+    NULL, NULL, NULL, NULL,
+    NULL,                   /* .i2s = */
+    NULL,                   /* .s2i = */
+    NULL,                   /* .i2v = */
+    NULL,                   /* .v2i = */
+    NULL, /*&i2r_ADMISSION_SYNTAX,*/  /* .i2r = */
+    NULL,                   /* .r2i = */
+    NULL                    /* extension-specific data */
+};
+
+const X509V3_EXT_METHOD v3_ext_additionalInformation = {
+    NID_id_commonpki_at_additionalInformation,   /* .ext_nid = */
+    0,                      /* .ext_flags = */
+    ASN1_ITEM_ref(DIRECTORYSTRING), /* .it = */
+    NULL, NULL, NULL, NULL,
+    NULL,                   /* .i2s = */
+    NULL,                   /* .s2i = */
+    NULL,                   /* .i2v = */
+    NULL,                   /* .v2i = */
+    NULL, /*&i2r_ADMISSION_SYNTAX,*/  /* .i2r = */
+    NULL,                   /* .r2i = */
+    NULL                    /* extension-specific data */
+};
