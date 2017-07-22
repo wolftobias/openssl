@@ -264,7 +264,7 @@ static int i2r_MONETARY_LIMIT_SYNTAX(const struct v3_ext_method *method, void *i
     if (monetaryLimit->currency != NULL) {
         if (BIO_printf(bp, "%*scurrency:\n", ind, "") <= 0
             || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            || GENERAL_NAME_print(bp, monetaryLimit->currency) <= 0
+            || ASN1_STRING_print(bp, monetaryLimit->currency) <= 0
             || BIO_printf(bp, "\n") <= 0)
             goto err;
     }
@@ -280,7 +280,7 @@ static int i2r_MONETARY_LIMIT_SYNTAX(const struct v3_ext_method *method, void *i
         if (monetaryLimit->exponent != NULL) {
         if (BIO_printf(bp, "%*sexponent:\n", ind, "") <= 0
             || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            || GENERAL_NAME_print(bp, monetaryLimit->exponent) <= 0
+            || BIO_printf(bp, ASN1_INTEGER_get(monetaryLimit->exponent)) <= 0
             || BIO_printf(bp, "\n") <= 0)
             goto err;
     }
