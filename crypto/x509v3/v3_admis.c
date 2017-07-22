@@ -288,3 +288,61 @@ static int i2r_MONETARY_LIMIT_SYNTAX(const struct v3_ext_method *method, void *i
 err:
     return -1;
 }
+
+ASN1_SEQUENCE(ISSUER_SERIAL) = {
+    ASN1_SEQUENCE_OF(ISSUER_SERIAL, issuer, GENERAL_NAME),
+    ASN1_SIMPLE(ISSUER_SERIAL, serial, ASN1_INTEGER),
+    ASN1_OPT(ISSUER_SERIAL, issuerUID, ASN1_BIT_STRING),
+ } ASN1_SEQUENCE_END(ISSUER_SERIAL) 
+
+ASN1_CHOICE(SIGNING_FOR) = {
+    ASN1_SIMPLE(SIGNING_FOR, u.thirdPerson, GENERAL_NAME),
+    ASN1_SIMPLE(SIGNING_FOR, u.certRef, ISSUER_SERIAL),
+} ASN1_CHOICE_END(SIGNING_FOR)
+
+ASN1_SEQUENCE(PROCURATION_SYNTAX) = {
+    ASN1_EXP_OPT(PROCURATION_SYNTAX, country, ASN1_PRINTABLESTRING, 1),
+    ASN1_EXP_OPT(PROCURATION_SYNTAX, typeOfSubstitiution, DIRECTORYSTRING, 2),
+    ASN1_EXP(PROCURATION_SYNTAX, signingFor, SIGNING_FOR, 3),
+ } ASN1_SEQUENCE_END(PROCURATION_SYNTAX)
+
+IMPLEMENT_ASN1_FUNCTIONS(ISSUER_SERIAL)
+IMPLEMENT_ASN1_FUNCTIONS(SIGNING_FOR)
+IMPLEMENT_ASN1_FUNCTIONS(PROCURATION_SYNTAX)
+
+/*
+static int i2r_PROCURATION_SYNTAX(const struct v3_ext_method *method, void *in,
+                                BIO *bp, int ind);
+*/
+
+const X509V3_EXT_METHOD v3_ext_procuration = {
+    NID_id_commonpki_at_procuration,
+    0,
+    ASN1_ITEM_ref(PROCURATION_SYNTAX),
+    NULL, NULL, NULL, NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL, /*&i2r_PROCURATION_SYNTAX,*/
+    NULL,
+    NULL
+};
+
+/* TODO
+static int i2r_PROCURATION_SYNTAX(const struct v3_ext_method *method, void *in,
+                                BIO *bp, int ind)
+{
+    PROCURATION_SYNTAX* restriction = PROCURATION_SYNTAX *)in;
+
+    if (restriction->restriction != NULL) {
+        if (BIO_printf(bp, "%*sRestriction ", ind, "") <= 0
+            || ASN1_STRING_print(bp, restriction->restriction) <= 0
+            || BIO_printf(bp, "\n") <= 0)
+            goto err;
+    }
+    return 1;
+
+err:
+    return -1;
+} */

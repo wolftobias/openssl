@@ -912,6 +912,34 @@ DECLARE_ASN1_ITEM(MONETARY_LIMIT_SYNTAX)
 
 DECLARE_ASN1_FUNCTIONS(MONETARY_LIMIT_SYNTAX)
 
+typedef struct IssuerSerial_st { 
+    STACK_OF(GENERAL_NAME)* issuer;
+    ASN1_INTEGER* serial;
+    ASN1_BIT_STRING* issuerUID; 
+} ISSUER_SERIAL;
+
+typedef struct SigningFor_st {
+    int type;
+    union {
+        GENERAL_NAME* thirdPerson;
+        ISSUER_SERIAL* certRef;
+    } u;
+} SIGNING_FOR;
+ 
+typedef struct ProcurationSyntax_st { 
+    ASN1_PRINTABLESTRING* country;
+    ASN1_STRING* typeOfSubstitiution;
+    SIGNING_FOR* signingFor; 
+} PROCURATION_SYNTAX;
+
+DECLARE_ASN1_ITEM(ISSUER_SERIAL)
+DECLARE_ASN1_ITEM(SIGNING_FOR)
+DECLARE_ASN1_ITEM(PROCURATION_SYNTAX)
+
+DECLARE_ASN1_FUNCTIONS(ISSUER_SERIAL)
+DECLARE_ASN1_FUNCTIONS(SIGNING_FOR)
+DECLARE_ASN1_FUNCTIONS(PROCURATION_SYNTAX)
+
 # ifdef  __cplusplus
 }
 # endif

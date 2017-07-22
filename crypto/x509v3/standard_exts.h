@@ -72,7 +72,8 @@ static const X509V3_EXT_METHOD *standard_exts[] = {
     &v3_ext_admission,
     &v3_ext_monetaryLimit,
     &v3_ext_restriction,
-    &v3_ext_additionalInformation
+    &v3_ext_additionalInformation,
+    &v3_ext_procuration
 };
 
 /* Number of standard extensions */
