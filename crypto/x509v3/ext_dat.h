@@ -23,6 +23,6 @@ extern const X509V3_EXT_METHOD v3_addr, v3_asid;
 extern const X509V3_EXT_METHOD v3_ct_scts[3];
 extern const X509V3_EXT_METHOD v3_tls_feature;
 extern const X509V3_EXT_METHOD v3_ext_admission;
+extern const X509V3_EXT_METHOD v3_ext_monetaryLimit;
 extern const X509V3_EXT_METHOD v3_ext_restriction;
 extern const X509V3_EXT_METHOD v3_ext_additionalInformation;
-extern const X509V3_EXT_METHOD v3_ext_monetaryLimit;
