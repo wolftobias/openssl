@@ -380,3 +380,17 @@ const X509V3_EXT_METHOD v3_ext_declarationOfMajority = {
     NULL,
     NULL
 };
+
+const X509V3_EXT_METHOD v3_subjectDirectoryAttributes = {
+    NID_subject_directory_attributes,
+    0,
+    ASN1_ITEM_ref(SUBJECT_DIRECTORY_ATTRIBUTES),
+    NULL, NULL, NULL, NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL, /*&i2r_PROCURATION_SYNTAX,*/
+    NULL,
+    NULL
+};

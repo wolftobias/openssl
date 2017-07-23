@@ -60,6 +60,7 @@ static const X509V3_EXT_METHOD *standard_exts[] = {
     &v3_name_constraints,
     &v3_policy_mappings,
     &v3_inhibit_anyp,
+    &v3_subjectDirectoryAttributes,
     &v3_idp,
     &v3_alt[2],
     &v3_freshest_crl,
