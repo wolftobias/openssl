@@ -416,7 +416,7 @@ const X509V3_EXT_METHOD v3_ext_dateOfCertGen = {
 };
 
 const X509V3_EXT_METHOD v3_ext_icssn = {
-    NID_id_commonpki_at_icssn,
+    NID_id_commonpki_at_icssn, /* object.txt add Serial Numer descriptio to it and update; NID_ICSSN */
     0,
     ASN1_ITEM_ref(ASN1_OCTET_STRING),
     NULL, NULL, NULL, NULL,
