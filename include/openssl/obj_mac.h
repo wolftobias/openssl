@@ -79,10 +79,10 @@
 #define NID_id_commonpki_at_declarationOfMajority               1124
 #define OBJ_id_commonpki_at_declarationOfMajority               OBJ_identified_organization,36L,8L,3L,5L
 
-#define SN_ICSSN                "id-commonpki-at-icssn"
-#define LN_ICSSN                "ICSSN"
-#define NID_ICSSN               1125
-#define OBJ_ICSSN               OBJ_identified_organization,36L,8L,3L,6L
+#define SN_id_commonpki_at_icssn                "id-commonpki-at-icssn"
+#define LN_id_commonpki_at_icssn                "ICSSN Serial Number"
+#define NID_id_commonpki_at_icssn               1134
+#define OBJ_id_commonpki_at_icssn               OBJ_identified_organization,36L,8L,3L,6L
 
 #define SN_id_commonpki_at_restriction          "id-commonpki-at-restriction"
 #define LN_id_commonpki_at_restriction          "Restriction Information"

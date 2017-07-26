@@ -21,7 +21,7 @@ identified-organization 36 8 3 2	: id-commonpki-at-procuration		: Procuration In
 identified-organization 36 8 3 3	: id-commonpki-at-admission		: Admission Information
 identified-organization 36 8 3 4	: id-commonpki-at-monetaryLimit		: Monetary Limit
 identified-organization 36 8 3 5	: id-commonpki-at-declarationOfMajority	: Declaration of Majority
-identified-organization 36 8 3 6	: id-commonpki-at-icssn			: ICSSN
+identified-organization 36 8 3 6	: id-commonpki-at-icssn			: ICSSN Serial Number
 identified-organization 36 8 3 8	: id-commonpki-at-restriction		: Restriction Information
 identified-organization 36 8 3 14	: id-commonpki-at-nameAtBirth		: Name at Birth
 identified-organization 36 8 3 15	: id-commonpki-at-additionalInformation	: Additional Information

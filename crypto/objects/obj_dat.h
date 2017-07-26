@@ -1014,18 +1014,18 @@ static const unsigned char so[7237] = {
     0x2B,0x24,0x08,0x03,0x03,                      /* [ 7172] OBJ_id_commonpki_at_admission */
     0x2B,0x24,0x08,0x03,0x04,                      /* [ 7177] OBJ_id_commonpki_at_monetaryLimit */
     0x2B,0x24,0x08,0x03,0x05,                      /* [ 7182] OBJ_id_commonpki_at_declarationOfMajority */
-    0x2B,0x24,0x08,0x03,0x06,                      /* [ 7187] OBJ_ICSSN */
-    0x2B,0x24,0x08,0x03,0x08,                      /* [ 7192] OBJ_id_commonpki_at_restriction */
-    0x2B,0x24,0x08,0x03,0x0E,                      /* [ 7197] OBJ_id_commonpki_at_nameAtBirth */
-    0x2B,0x24,0x08,0x03,0x0F,                      /* [ 7202] OBJ_id_commonpki_at_additionalInformation */
-    0x04,0x00,0x8E,0x46,0x01,                      /* [ 7207] OBJ_id_etsi_qcs */
-    0x04,0x00,0x8E,0x46,0x01,0x01,                 /* [ 7212] OBJ_id_etsi_qcs_QcCompliance */
-    0x04,0x00,0x8E,0x46,0x01,0x02,                 /* [ 7218] OBJ_id_etsi_qcs_QcLimitValue */
-    0x04,0x00,0x8E,0x46,0x01,0x03,                 /* [ 7224] OBJ_id_etsi_qcs_QcRetentionPeriod */
-    0x04,0x00,0x8E,0x46,0x01,0x04,                 /* [ 7230] OBJ_id_etsi_qcs_QcSSCD */
+    0x2B,0x24,0x08,0x03,0x08,                      /* [ 7187] OBJ_id_commonpki_at_restriction */
+    0x2B,0x24,0x08,0x03,0x0E,                      /* [ 7192] OBJ_id_commonpki_at_nameAtBirth */
+    0x2B,0x24,0x08,0x03,0x0F,                      /* [ 7197] OBJ_id_commonpki_at_additionalInformation */
+    0x04,0x00,0x8E,0x46,0x01,                      /* [ 7202] OBJ_id_etsi_qcs */
+    0x04,0x00,0x8E,0x46,0x01,0x01,                 /* [ 7207] OBJ_id_etsi_qcs_QcCompliance */
+    0x04,0x00,0x8E,0x46,0x01,0x02,                 /* [ 7213] OBJ_id_etsi_qcs_QcLimitValue */
+    0x04,0x00,0x8E,0x46,0x01,0x03,                 /* [ 7219] OBJ_id_etsi_qcs_QcRetentionPeriod */
+    0x04,0x00,0x8E,0x46,0x01,0x04,                 /* [ 7225] OBJ_id_etsi_qcs_QcSSCD */
+    0x2B,0x24,0x08,0x03,0x06,                      /* [ 7231] OBJ_id_commonpki_at_icssn */
 };
 
-#define NUM_NID 1134
+#define NUM_NID 1135
 static const ASN1_OBJECT nid_objs[NUM_NID] = {
     {"UNDEF", "undefined", NID_undef},
     {"rsadsi", "RSA Data Security, Inc.", NID_rsadsi, 6, &so[0]},
@@ -2152,15 +2152,16 @@ static const ASN1_OBJECT nid_objs[NUM_NID] = {
     {"id-commonpki-at-admission", "Admission Information", NID_id_commonpki_at_admission, 5, &so[7172]},
     {"id-commonpki-at-monetaryLimit", "Monetary Limit", NID_id_commonpki_at_monetaryLimit, 5, &so[7177]},
     {"id-commonpki-at-declarationOfMajority", "Declaration of Majority", NID_id_commonpki_at_declarationOfMajority, 5, &so[7182]},
-    {"id-commonpki-at-icssn", "ICSSN", NID_ICSSN, 5, &so[7187]},
-    {"id-commonpki-at-restriction", "Restriction Information", NID_id_commonpki_at_restriction, 5, &so[7192]},
-    {"id-commonpki-at-nameAtBirth", "Name at Birth", NID_id_commonpki_at_nameAtBirth, 5, &so[7197]},
-    {"id-commonpki-at-additionalInformation", "Additional Information", NID_id_commonpki_at_additionalInformation, 5, &so[7202]},
-    {"id-etsi-qcs", "id-etsi-qcs", NID_id_etsi_qcs, 5, &so[7207]},
-    {"id-etsi-qcs-QcCompliance", "QC Compliance", NID_id_etsi_qcs_QcCompliance, 6, &so[7212]},
-    {"id-etsi-qcs-QcLimitValue", "QC Limit Value", NID_id_etsi_qcs_QcLimitValue, 6, &so[7218]},
-    {"id-etsi-qcs-QcRetentionPeriod", "QC Retention Period", NID_id_etsi_qcs_QcRetentionPeriod, 6, &so[7224]},
-    {"id-etsi-qcs-QcSSCD", "QC SSCD", NID_id_etsi_qcs_QcSSCD, 6, &so[7230]},
+    { NULL, NULL, NID_undef },
+    {"id-commonpki-at-restriction", "Restriction Information", NID_id_commonpki_at_restriction, 5, &so[7187]},
+    {"id-commonpki-at-nameAtBirth", "Name at Birth", NID_id_commonpki_at_nameAtBirth, 5, &so[7192]},
+    {"id-commonpki-at-additionalInformation", "Additional Information", NID_id_commonpki_at_additionalInformation, 5, &so[7197]},
+    {"id-etsi-qcs", "id-etsi-qcs", NID_id_etsi_qcs, 5, &so[7202]},
+    {"id-etsi-qcs-QcCompliance", "QC Compliance", NID_id_etsi_qcs_QcCompliance, 6, &so[7207]},
+    {"id-etsi-qcs-QcLimitValue", "QC Limit Value", NID_id_etsi_qcs_QcLimitValue, 6, &so[7213]},
+    {"id-etsi-qcs-QcRetentionPeriod", "QC Retention Period", NID_id_etsi_qcs_QcRetentionPeriod, 6, &so[7219]},
+    {"id-etsi-qcs-QcSSCD", "QC SSCD", NID_id_etsi_qcs_QcSSCD, 6, &so[7225]},
+    {"id-commonpki-at-icssn", "ICSSN Serial Number", NID_id_commonpki_at_icssn, 5, &so[7231]},
 };
 
 #define NUM_SN 1124
@@ -2722,7 +2723,7 @@ static const unsigned int sn_objs[NUM_SN] = {
     1122,    /* "id-commonpki-at-admission" */
     1120,    /* "id-commonpki-at-dateOfCertGen" */
     1124,    /* "id-commonpki-at-declarationOfMajority" */
-    1125,    /* "id-commonpki-at-icssn" */
+    1134,    /* "id-commonpki-at-icssn" */
     1123,    /* "id-commonpki-at-monetaryLimit" */
     1127,    /* "id-commonpki-at-nameAtBirth" */
     1121,    /* "id-commonpki-at-procuration" */
@@ -3358,7 +3359,7 @@ static const unsigned int ln_objs[NUM_LN] = {
      431,    /* "Hold Instruction None" */
      433,    /* "Hold Instruction Reject" */
      634,    /* "ICC or token signature" */
-    1125,    /* "ICSSN" */
+    1134,    /* "ICSSN Serial Number" */
     1004,    /* "INN" */
      294,    /* "IPSec End System" */
      295,    /* "IPSec Tunnel" */
@@ -4695,7 +4696,7 @@ static const unsigned int obj_objs[NUM_OBJ] = {
     1122,    /* OBJ_id_commonpki_at_admission    1 3 36 8 3 3 */
     1123,    /* OBJ_id_commonpki_at_monetaryLimit 1 3 36 8 3 4 */
     1124,    /* OBJ_id_commonpki_at_declarationOfMajority 1 3 36 8 3 5 */
-    1125,    /* OBJ_ICSSN                        1 3 36 8 3 6 */
+    1134,    /* OBJ_id_commonpki_at_icssn        1 3 36 8 3 6 */
     1126,    /* OBJ_id_commonpki_at_restriction  1 3 36 8 3 8 */
     1127,    /* OBJ_id_commonpki_at_nameAtBirth  1 3 36 8 3 14 */
     1128,    /* OBJ_id_commonpki_at_additionalInformation 1 3 36 8 3 15 */
