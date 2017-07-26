@@ -1122,7 +1122,7 @@ id_commonpki_at_procuration		1121
 id_commonpki_at_admission		1122
 id_commonpki_at_monetaryLimit		1123
 id_commonpki_at_declarationOfMajority		1124
-ICSSN		1125
+id_commonpki_at_icssn		1125
 id_commonpki_at_restriction		1126
 id_commonpki_at_nameAtBirth		1127
 id_commonpki_at_additionalInformation		1128
@@ -1131,4 +1131,3 @@ id_etsi_qcs_QcCompliance		1130
 id_etsi_qcs_QcLimitValue		1131
 id_etsi_qcs_QcRetentionPeriod		1132
 id_etsi_qcs_QcSSCD		1133
-id_commonpki_at_icssn		1134
