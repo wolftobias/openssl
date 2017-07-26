@@ -387,11 +387,38 @@ ASN1_ITEM_TEMPLATE_END(SUBJECT_DIRECTORY_ATTRIBUTES)
 
 IMPLEMENT_ASN1_FUNCTIONS(SUBJECT_DIRECTORY_ATTRIBUTES)
 
-
 const X509V3_EXT_METHOD v3_subjectDirectoryAttributes = {
     NID_subject_directory_attributes,
     0,
     ASN1_ITEM_ref(SUBJECT_DIRECTORY_ATTRIBUTES),
+    NULL, NULL, NULL, NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL, /*&i2r_PROCURATION_SYNTAX,*/
+    NULL,
+    NULL
+};
+
+const X509V3_EXT_METHOD v3_ext_dateOfCertGen = {
+    NID_id_commonpki_at_dateOfCertGen,
+    0,
+    ASN1_ITEM_ref(ASN1_GENERALIZEDTIME),
+    NULL, NULL, NULL, NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    NULL, /*&i2r_PROCURATION_SYNTAX,*/
+    NULL,
+    NULL
+};
+
+const X509V3_EXT_METHOD v3_ext_icssn = {
+    NID_id_commonpki_at_icssn,
+    0,
+    ASN1_ITEM_ref(ASN1_OCTET_STRING),
     NULL, NULL, NULL, NULL,
     NULL,
     NULL,
