@@ -362,11 +362,6 @@ ASN1_CHOICE(DECLARATION_OF_MAJORITY_SYNTAX) = {
 
 IMPLEMENT_ASN1_FUNCTIONS(DECLARATION_OF_MAJORITY_SYNTAX)
 
-/*
-static int i2r_PROCURATION_SYNTAX(const struct v3_ext_method *method, void *in,
-                                BIO *bp, int ind);
-*/
-
 const X509V3_EXT_METHOD v3_ext_declarationOfMajority = {
     NID_id_commonpki_at_declarationOfMajority,
     0,
@@ -401,6 +396,9 @@ const X509V3_EXT_METHOD v3_subjectDirectoryAttributes = {
     NULL
 };
 
+static int i2r_DATE_OF_CERTIFICATE_GENERATION(const struct v3_ext_method *method, void *in,
+                                BIO *bp, int ind);
+
 const X509V3_EXT_METHOD v3_ext_dateOfCertGen = {
     NID_id_commonpki_at_dateOfCertGen,
     0,
@@ -410,11 +408,33 @@ const X509V3_EXT_METHOD v3_ext_dateOfCertGen = {
     NULL,
     NULL,
     NULL,
-    NULL, /*&i2r_PROCURATION_SYNTAX,*/
+    &i2r_DATE_OF_CERTIFICATE_GENERATION,
     NULL,
     NULL
 };
 
+static int i2r_DATE_OF_CERTIFICATE_GENERATION(const struct v3_ext_method *method, void *in,
+                                BIO *bp, int ind)
+{
+    ASN1_GENERALIZEDTIME* genTime = (ASN1_GENERALIZEDTIME *)in;
+    
+    if (genTime != NULL) {
+        if (BIO_printf(bp, "%*sDate of Certificate Generation:\n", ind, "") <= 0
+            || BIO_printf(bp, "%*s  ", ind, "") <= 0
+            || ASN1_GENERALIZEDTIME_print(bp, genTime) <= 0
+            || BIO_printf(bp, "\n") <= 0)
+            goto err;
+    }
+    
+    return 1;
+
+err:
+    return -1;
+}
+
+static int i2r_ICSSN(const struct v3_ext_method *method, void *in,
+                                BIO *bp, int ind)
+    
 const X509V3_EXT_METHOD v3_ext_icssn = {
     NID_id_commonpki_at_icssn, /* object.txt add Serial Numer descriptio to it and update; NID_ICSSN */
     0,
@@ -424,7 +444,26 @@ const X509V3_EXT_METHOD v3_ext_icssn = {
     NULL,
     NULL,
     NULL,
-    NULL, /*&i2r_PROCURATION_SYNTAX,*/
+    &i2r_ICSSN,
     NULL,
     NULL
 };
+ /* für mich zum test: OPENSSL_buf2hexstr(oct->data, oct->length) bei icssn in ctool */
+static int i2r_ICSSN(const struct v3_ext_method *method, void *in,
+                                BIO *bp, int ind)
+{
+    ASN1_OCTET_STRING* serial = (ASN1_OCTET_STRING *)in;
+    
+    if (genTime != NULL) {
+        if (BIO_printf(bp, "%*sDate of Certificate Generation:\n", ind, "") <= 0
+            || BIO_printf(bp, "%*s  ", ind, "") <= 0
+            || ASN1_STRING_print(bp, serial) <= 0
+            || BIO_printf(bp, "\n") <= 0)
+            goto err;
+    }
+    
+    return 1;
+
+err:
+    return -1;
+}
