@@ -928,7 +928,7 @@ typedef struct SigningFor_st {
  
 typedef struct ProcurationSyntax_st { 
     ASN1_PRINTABLESTRING* country;
-    ASN1_STRING* typeOfSubstitiution;
+    ASN1_STRING* typeOfSubstitution;
     SIGNING_FOR* signingFor; 
 } PROCURATION_SYNTAX;
 
