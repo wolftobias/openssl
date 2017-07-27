@@ -202,6 +202,9 @@ err:
     return -1;
 }
 
+static int i2r_RESTRICTION(const struct v3_ext_method *method, void *in,
+                                BIO *bp, int ind);
+
 const X509V3_EXT_METHOD v3_ext_restriction = {
     NID_id_commonpki_at_restriction,   /* .ext_nid = */
     0,                      /* .ext_flags = */
@@ -211,10 +214,32 @@ const X509V3_EXT_METHOD v3_ext_restriction = {
     NULL,                   /* .s2i = */
     NULL,                   /* .i2v = */
     NULL,                   /* .v2i = */
-    NULL, /*&i2r_ADMISSION_SYNTAX,*/  /* .i2r = */
+    &i2r_RESTRICTION, /*&i2r_ADMISSION_SYNTAX,*/  /* .i2r = */
     NULL,                   /* .r2i = */
     NULL                    /* extension-specific data */
 };
+
+static int i2r_RESTRICTION(const struct v3_ext_method *method, void *in,
+                                BIO *bp, int ind)
+{
+    DIRECTORYSTRING* restriction = (DIRECTORYSTRING *)in;
+    
+    if (restriction != NULL) {
+        if (BIO_printf(bp, "%*sRestriction:\n", ind, "") <= 0
+            || BIO_printf(bp, "%*s  ", ind, "") <= 0
+            || ASN1_STRING_print(bp, restriction) <= 0
+            || BIO_printf(bp, "\n") <= 0)
+            goto err;
+    }
+    
+    return 1;
+
+err:
+    return -1;
+}
+
+static int i2r_ADDITIONAL_INFORMATION(const struct v3_ext_method *method, void *in,
+                                BIO *bp, int ind);
 
 const X509V3_EXT_METHOD v3_ext_additionalInformation = {
     NID_id_commonpki_at_additionalInformation,   /* .ext_nid = */
@@ -225,10 +250,29 @@ const X509V3_EXT_METHOD v3_ext_additionalInformation = {
     NULL,                   /* .s2i = */
     NULL,                   /* .i2v = */
     NULL,                   /* .v2i = */
-    NULL, /*&i2r_ADMISSION_SYNTAX,*/  /* .i2r = */
+    &i2r_ADDITIONAL_INFORMATION, /*&i2r_ADMISSION_SYNTAX,*/  /* .i2r = */
     NULL,                   /* .r2i = */
     NULL                    /* extension-specific data */
 };
+
+static int i2r_ADDITIONAL_INFORMATION(const struct v3_ext_method *method, void *in,
+                                BIO *bp, int ind)
+{
+    DIRECTORYSTRING* info = (DIRECTORYSTRING *)in;
+    
+    if (info != NULL) {
+        if (BIO_printf(bp, "%*sAdditional Information:\n", ind, "") <= 0
+            || BIO_printf(bp, "%*s  ", ind, "") <= 0
+            || ASN1_STRING_print(bp, info) <= 0
+            || BIO_printf(bp, "\n") <= 0)
+            goto err;
+    }
+    
+    return 1;
+
+err:
+    return -1;
+}
 
 ASN1_SEQUENCE(MONETARY_LIMIT_SYNTAX) = {
     ASN1_SIMPLE(MONETARY_LIMIT_SYNTAX, currency, ASN1_PRINTABLESTRING),
