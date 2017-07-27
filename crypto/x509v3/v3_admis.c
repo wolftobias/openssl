@@ -392,12 +392,27 @@ static int i2r_PROCURATION_SYNTAX(const struct v3_ext_method *method, void *in,
             goto err;
     }
     
-    /* als extra i2r wie bei admission?
+    /* als extra i2r wie bei admission?         
+    if (entry->namingAuthority != NULL) {
+            if (i2r_NAMING_AUTHORITY(method, entry->namingAuthority, bp, ind) <= 0)
+                goto err;
+        }
     if (procuration->signingFor != NULL) {
-        if (BIO_printf(bp, "%*sSigning For:\n", ind, "") <= 0
-            || ASN1_STRING_print(bp, procuration->typeOfSubstitution) <= 0
-            || BIO_printf(bp, "\n") <= 0)
-            goto err;
+        SIGNING_FOR* signFor = (SIGNING_FOR*)procuration->signingFor;
+        
+        if (signFor.u->thirdPerson != NULL) {
+            if (BIO_printf(bp, "%*sXXX:\n", ind, "") <= 0
+                || ASN1_GENERAL_NAME_print(bp, signFor.u->thirdPerson) <= 0
+                || BIO_printf(bp, "\n") <= 0)
+                goto err;
+        }
+        
+        if (signFor.u->certRef != NULL) {
+            if (BIO_printf(bp, "%*sXXX:\n", ind, "") <= 0
+                || XXX(bp, signFor.u->certRef) <= 0
+                || BIO_printf(bp, "\n") <= 0)
+                goto err;
+        }
     } */
     
     return 1;
