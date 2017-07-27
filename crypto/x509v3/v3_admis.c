@@ -222,7 +222,7 @@ const X509V3_EXT_METHOD v3_ext_restriction = {
 static int i2r_RESTRICTION(const struct v3_ext_method *method, void *in,
                                 BIO *bp, int ind)
 {
-    DIRECTORYSTRING* restriction = (DIRECTORYSTRING *)in;
+    ASN1_STRING* restriction = (ASN1_STRING *)in;
     
     if (restriction != NULL) {
         if (BIO_printf(bp, "%*sRestriction:\n", ind, "") <= 0
@@ -258,7 +258,7 @@ const X509V3_EXT_METHOD v3_ext_additionalInformation = {
 static int i2r_ADDITIONAL_INFORMATION(const struct v3_ext_method *method, void *in,
                                 BIO *bp, int ind)
 {
-    DIRECTORYSTRING* info = (DIRECTORYSTRING *)in;
+    ASN1_STRING* info = (ASN1_STRING *)in;
     
     if (info != NULL) {
         if (BIO_printf(bp, "%*sAdditional Information:\n", ind, "") <= 0
