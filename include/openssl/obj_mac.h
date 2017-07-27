@@ -1846,22 +1846,27 @@
 #define OBJ_id_on_permanentIdentifier           OBJ_id_on,3L
 
 #define SN_id_pda_dateOfBirth           "id-pda-dateOfBirth"
+#define LN_id_pda_dateOfBirth           "Date of Birth"
 #define NID_id_pda_dateOfBirth          348
 #define OBJ_id_pda_dateOfBirth          OBJ_id_pda,1L
 
 #define SN_id_pda_placeOfBirth          "id-pda-placeOfBirth"
+#define LN_id_pda_placeOfBirth          "Place of Birth"
 #define NID_id_pda_placeOfBirth         349
 #define OBJ_id_pda_placeOfBirth         OBJ_id_pda,2L
 
-#define SN_id_pda_gender                "id-pda-gender"
-#define NID_id_pda_gender               351
-#define OBJ_id_pda_gender               OBJ_id_pda,3L
+#define SN_Gender               "id-pda-gender"
+#define LN_Gender               "Gender"
+#define NID_Gender              1134
+#define OBJ_Gender              OBJ_id_pda,3L
 
 #define SN_id_pda_countryOfCitizenship          "id-pda-countryOfCitizenship"
+#define LN_id_pda_countryOfCitizenship          "Country of Citizenship"
 #define NID_id_pda_countryOfCitizenship         352
 #define OBJ_id_pda_countryOfCitizenship         OBJ_id_pda,4L
 
 #define SN_id_pda_countryOfResidence            "id-pda-countryOfResidence"
+#define LN_id_pda_countryOfResidence            "Country of Residence"
 #define NID_id_pda_countryOfResidence           353
 #define OBJ_id_pda_countryOfResidence           OBJ_id_pda,5L
 

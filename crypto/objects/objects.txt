@@ -601,11 +601,11 @@ id-on 1			: id-on-personalData
 id-on 3			: id-on-permanentIdentifier : Permanent Identifier
 
 # personal data attributes
-id-pda 1		: id-pda-dateOfBirth
-id-pda 2		: id-pda-placeOfBirth
-id-pda 3		: id-pda-gender
-id-pda 4		: id-pda-countryOfCitizenship
-id-pda 5		: id-pda-countryOfResidence
+id-pda 1		: id-pda-dateOfBirth 		: Date of Birth
+id-pda 2		: id-pda-placeOfBirth 		: Place of Birth
+id-pda 3		: id-pda-gender 		: Gender
+id-pda 4		: id-pda-countryOfCitizenship	: Country of Citizenship
+id-pda 5		: id-pda-countryOfResidence 	: Country of Residence
 
 # attribute certificate attributes
 id-aca 1		: id-aca-authenticationInfo
