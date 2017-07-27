@@ -433,10 +433,10 @@ err:
 }
 
 static int i2r_ICSSN(const struct v3_ext_method *method, void *in,
-                                BIO *bp, int ind)
+                                BIO *bp, int ind);
     
 const X509V3_EXT_METHOD v3_ext_icssn = {
-    NID_id_commonpki_at_icssn, /* object.txt add Serial Numer descriptio to it and update; NID_ICSSN */
+    NID_id_commonpki_at_icssn,
     0,
     ASN1_ITEM_ref(ASN1_OCTET_STRING),
     NULL, NULL, NULL, NULL,
@@ -455,7 +455,7 @@ static int i2r_ICSSN(const struct v3_ext_method *method, void *in,
     ASN1_OCTET_STRING* serial = (ASN1_OCTET_STRING *)in;
     
     if (genTime != NULL) {
-        if (BIO_printf(bp, "%*sDate of Certificate Generation:\n", ind, "") <= 0
+        if (BIO_printf(bp, "%*sICSSN Serial Number:\n", ind, "") <= 0
             || BIO_printf(bp, "%*s  ", ind, "") <= 0
             || ASN1_STRING_print(bp, serial) <= 0
             || BIO_printf(bp, "\n") <= 0)
