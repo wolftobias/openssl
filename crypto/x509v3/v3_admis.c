@@ -225,10 +225,10 @@ static int i2r_RESTRICTION(const struct v3_ext_method *method, void *in,
     ASN1_STRING* restriction = (ASN1_STRING *)in;
     
     if (restriction != NULL) {
-        if (BIO_printf(bp, "%*sRestriction:\n", ind, "") <= 0
-            || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            || ASN1_STRING_print(bp, restriction) <= 0
-            || BIO_printf(bp, "\n") <= 0)
+        if (/*BIO_printf(bp, "%*sRestriction:\n", ind, "") <= 0
+            || BIO_printf(bp, "%*s  ", ind, "") <= 0 
+            || */ASN1_STRING_print(bp, restriction) <= 0
+            /* || BIO_printf(bp, "\n") <= 0 */)
             goto err;
     }
     
@@ -261,10 +261,10 @@ static int i2r_ADDITIONAL_INFORMATION(const struct v3_ext_method *method, void *
     ASN1_STRING* info = (ASN1_STRING *)in;
     
     if (info != NULL) {
-        if (BIO_printf(bp, "%*sAdditional Information:\n", ind, "") <= 0
+        if (/*BIO_printf(bp, "%*sAdditional Information:\n", ind, "") <= 0
             || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            || ASN1_STRING_print(bp, info) <= 0
-            || BIO_printf(bp, "\n") <= 0)
+            || */ ASN1_STRING_print(bp, info) <= 0
+            /* || BIO_printf(bp, "\n") <= 0*/)
             goto err;
     }
     
@@ -315,7 +315,7 @@ static int i2r_MONETARY_LIMIT_SYNTAX(const struct v3_ext_method *method, void *i
     if (monetaryLimit->amount != NULL) {
         if (BIO_printf(bp, "%*samount:\n", ind, "") <= 0
             || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            || BIO_printf(bp, "amount: %ld\n", ASN1_INTEGER_get(monetaryLimit->amount)) <= 0
+            || BIO_printf(bp /*, "amount: %ld\n"*/, ASN1_INTEGER_get(monetaryLimit->amount)) <= 0
             || BIO_printf(bp, "\n") <= 0)
             goto err;
     }
@@ -323,7 +323,7 @@ static int i2r_MONETARY_LIMIT_SYNTAX(const struct v3_ext_method *method, void *i
     if (monetaryLimit->exponent != NULL) {
         if (BIO_printf(bp, "%*sexponent:\n", ind, "") <= 0
             || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            || BIO_printf(bp, "exponent: %ld\n", ASN1_INTEGER_get(monetaryLimit->exponent)) <= 0
+            || BIO_printf(bp /*, "exponent: %ld\n" */, ASN1_INTEGER_get(monetaryLimit->exponent)) <= 0
             || BIO_printf(bp, "\n") <= 0)
             goto err;
     }
