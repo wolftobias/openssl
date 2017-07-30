@@ -493,10 +493,10 @@ static int i2r_DATE_OF_CERTIFICATE_GENERATION(const struct v3_ext_method *method
     ASN1_GENERALIZEDTIME* genTime = (ASN1_GENERALIZEDTIME *)in;
     
     if (genTime != NULL) {
-        if (BIO_printf(bp, "%*sDate of Certificate Generation:\n", ind, "") <= 0
+        if (/*BIO_printf(bp, "%*sDate of Certificate Generation:\n", ind, "") <= 0
             || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            || ASN1_GENERALIZEDTIME_print(bp, genTime) <= 0
-            || BIO_printf(bp, "\n") <= 0)
+            || */ASN1_GENERALIZEDTIME_print(bp, genTime) <= 0 /*
+            || BIO_printf(bp, "\n") <= 0*/)
             goto err;
     }
     
@@ -529,10 +529,10 @@ static int i2r_ICSSN(const struct v3_ext_method *method, void *in,
     ASN1_OCTET_STRING* serial = (ASN1_OCTET_STRING *)in;
     
     if (serial != NULL) {
-        if (BIO_printf(bp, "%*sICSSN Serial Number:\n", ind, "") <= 0
+        if (/*BIO_printf(bp, "%*sICSSN Serial Number:\n", ind, "") <= 0
             || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            || ASN1_STRING_print(bp, serial) <= 0
-            || BIO_printf(bp, "\n") <= 0)
+            ||*/ ASN1_STRING_print(bp, serial) <= 0 /*
+            || BIO_printf(bp, "\n") <= 0*/)
             goto err;
     }
     
