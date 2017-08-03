@@ -54,17 +54,17 @@ static int i2r_ADMISSION_SYNTAX(const struct v3_ext_method *method, void *in,
                                 BIO *bp, int ind);
 
 const X509V3_EXT_METHOD v3_ext_admission = {
-    NID_id_commonpki_at_admission,   /* .ext_nid = */
-    0,                      /* .ext_flags = */
-    ASN1_ITEM_ref(ADMISSION_SYNTAX), /* .it = */
+    NID_id_commonpki_at_admission,
+    0,
+    ASN1_ITEM_ref(ADMISSION_SYNTAX),
     NULL, NULL, NULL, NULL,
-    NULL,                   /* .i2s = */
-    NULL,                   /* .s2i = */
-    NULL,                   /* .i2v = */
-    NULL,                   /* .v2i = */
-    &i2r_ADMISSION_SYNTAX,  /* .i2r = */
-    NULL,                   /* .r2i = */
-    NULL                    /* extension-specific data */
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    &i2r_ADMISSION_SYNTAX,
+    NULL,
+    NULL
 };
 
 
@@ -206,17 +206,17 @@ static int i2r_RESTRICTION(const struct v3_ext_method *method, void *in,
                                 BIO *bp, int ind);
 
 const X509V3_EXT_METHOD v3_ext_restriction = {
-    NID_id_commonpki_at_restriction,   /* .ext_nid = */
-    0,                      /* .ext_flags = */
-    ASN1_ITEM_ref(DIRECTORYSTRING), /* .it = */
+    NID_id_commonpki_at_restriction,
+    0,
+    ASN1_ITEM_ref(DIRECTORYSTRING),
     NULL, NULL, NULL, NULL,
-    NULL,                   /* .i2s = */
-    NULL,                   /* .s2i = */
-    NULL,                   /* .i2v = */
-    NULL,                   /* .v2i = */
-    &i2r_RESTRICTION, /*&i2r_ADMISSION_SYNTAX,*/  /* .i2r = */
-    NULL,                   /* .r2i = */
-    NULL                    /* extension-specific data */
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    &i2r_RESTRICTION,
+    NULL,
+    NULL
 };
 
 static int i2r_RESTRICTION(const struct v3_ext_method *method, void *in,
@@ -225,10 +225,8 @@ static int i2r_RESTRICTION(const struct v3_ext_method *method, void *in,
     ASN1_STRING* restriction = (ASN1_STRING *)in;
     
     if (restriction != NULL) {
-        if (/*BIO_printf(bp, "%*sRestriction:\n", ind, "") <= 0
-            || BIO_printf(bp, "%*s  ", ind, "") <= 0 
-            || */ASN1_STRING_print(bp, restriction) <= 0
-            /* || BIO_printf(bp, "\n") <= 0 */)
+        if (BIO_printf(bp, "%*s  ", ind, "") <= 0 
+            || ASN1_STRING_print(bp, restriction) <= 0)
             goto err;
     }
     
@@ -242,17 +240,17 @@ static int i2r_ADDITIONAL_INFORMATION(const struct v3_ext_method *method, void *
                                 BIO *bp, int ind);
 
 const X509V3_EXT_METHOD v3_ext_additionalInformation = {
-    NID_id_commonpki_at_additionalInformation,   /* .ext_nid = */
-    0,                      /* .ext_flags = */
-    ASN1_ITEM_ref(DIRECTORYSTRING), /* .it = */
+    NID_id_commonpki_at_additionalInformation,
+    0,
+    ASN1_ITEM_ref(DIRECTORYSTRING),
     NULL, NULL, NULL, NULL,
-    NULL,                   /* .i2s = */
-    NULL,                   /* .s2i = */
-    NULL,                   /* .i2v = */
-    NULL,                   /* .v2i = */
-    &i2r_ADDITIONAL_INFORMATION, /*&i2r_ADMISSION_SYNTAX,*/  /* .i2r = */
-    NULL,                   /* .r2i = */
-    NULL                    /* extension-specific data */
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    &i2r_ADDITIONAL_INFORMATION,
+    NULL,
+    NULL
 };
 
 static int i2r_ADDITIONAL_INFORMATION(const struct v3_ext_method *method, void *in,
@@ -261,10 +259,8 @@ static int i2r_ADDITIONAL_INFORMATION(const struct v3_ext_method *method, void *
     ASN1_STRING* info = (ASN1_STRING *)in;
     
     if (info != NULL) {
-        if (/*BIO_printf(bp, "%*sAdditional Information:\n", ind, "") <= 0
-            || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            || */ ASN1_STRING_print(bp, info) <= 0
-            /* || BIO_printf(bp, "\n") <= 0*/)
+        if (BIO_printf(bp, "%*s  ", ind, "") <= 0 
+            ||  ASN1_STRING_print(bp, info) <= 0)
             goto err;
     }
     
@@ -286,17 +282,17 @@ static int i2r_MONETARY_LIMIT_SYNTAX(const struct v3_ext_method *method, void *i
                                 BIO *bp, int ind);
 
 const X509V3_EXT_METHOD v3_ext_monetaryLimit = {
-    NID_id_commonpki_at_monetaryLimit,   /* .ext_nid = */
-    0,                      /* .ext_flags = */
-    ASN1_ITEM_ref(MONETARY_LIMIT_SYNTAX), /* .it = */
+    NID_id_commonpki_at_monetaryLimit,
+    0,
+    ASN1_ITEM_ref(MONETARY_LIMIT_SYNTAX),
     NULL, NULL, NULL, NULL,
-    NULL,                   /* .i2s = */
-    NULL,                   /* .s2i = */
-    NULL,                   /* .i2v = */
-    NULL,                   /* .v2i = */
-    i2r_MONETARY_LIMIT_SYNTAX, /*&i2r_ADMISSION_SYNTAX,*/  /* .i2r = */
-    NULL,                   /* .r2i = */
-    NULL                    /* extension-specific data */
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    i2r_MONETARY_LIMIT_SYNTAX,
+    NULL,
+    NULL
 };
 
 static int i2r_MONETARY_LIMIT_SYNTAX(const struct v3_ext_method *method, void *in,
@@ -305,26 +301,22 @@ static int i2r_MONETARY_LIMIT_SYNTAX(const struct v3_ext_method *method, void *i
     MONETARY_LIMIT_SYNTAX* monetaryLimit = (MONETARY_LIMIT_SYNTAX *)in;
     
     if (monetaryLimit->currency != NULL) {
-        if (BIO_printf(bp, "%*scurrency:\n", ind, "") <= 0
-            || BIO_printf(bp, "%*s  ", ind, "") <= 0
+        if (BIO_printf(bp, "%*scurrency: ", ind, "") <= 0
             || ASN1_STRING_print(bp, monetaryLimit->currency) <= 0
             || BIO_printf(bp, "\n") <= 0)
             goto err;
     }
 
     if (monetaryLimit->amount != NULL) {
-        if (BIO_printf(bp, "%*samount:\n", ind, "") <= 0
-            || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            || BIO_printf(bp, "%ld\n", ASN1_INTEGER_get(monetaryLimit->amount)) <= 0
-            /*|| BIO_printf(bp, "\n") <= 0*/)
+        if (BIO_printf(bp, "%*samount:", ind, "") <= 0
+            || BIO_printf(bp, "%ld ", ASN1_INTEGER_get(monetaryLimit->amount)) <= 0
+            || BIO_printf(bp, "\n") <= 0)
             goto err;
     }
 
     if (monetaryLimit->exponent != NULL) {
-        if (BIO_printf(bp, "%*sexponent:\n", ind, "") <= 0
-            || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            || BIO_printf(bp, "%ld\n", ASN1_INTEGER_get(monetaryLimit->exponent)) <= 0
-            /*|| BIO_printf(bp, "\n") <= 0*/)
+        if (BIO_printf(bp, "%*sexponent:", ind, "") <= 0
+            || BIO_printf(bp, "%ld ", ASN1_INTEGER_get(monetaryLimit->exponent)) <= 0)
             goto err;
     }
     return 1;
@@ -367,7 +359,7 @@ const X509V3_EXT_METHOD v3_ext_procuration = {
     NULL,
     NULL,
     NULL,
-    &i2r_PROCURATION_SYNTAX, /*&i2r_PROCURATION_SYNTAX,*/
+    &i2r_PROCURATION_SYNTAX,
     NULL,
     NULL
 };
@@ -377,43 +369,116 @@ static int i2r_PROCURATION_SYNTAX(const struct v3_ext_method *method, void *in,
                                 BIO *bp, int ind)
 {
     PROCURATION_SYNTAX* procuration = (PROCURATION_SYNTAX *)in;
-/* country, typeofSubstituon, signingfor -> sequence SignigFor = Choice */
+
     if (procuration->country != NULL) {
-        if (BIO_printf(bp, "%*scountry:\n", ind, "") <= 0
+        if (BIO_printf(bp, "%*scountry: ", ind, "") <= 0
             || ASN1_STRING_print(bp, procuration->country) <= 0
             || BIO_printf(bp, "\n") <= 0)
             goto err;
     }
     
     if (procuration->typeOfSubstitution != NULL) {
-        if (BIO_printf(bp, "%*sType of Substitution:\n", ind, "") <= 0
+        if (BIO_printf(bp, "%*sType of Substitution: ", ind, "") <= 0
             || ASN1_STRING_print(bp, procuration->typeOfSubstitution) <= 0
             || BIO_printf(bp, "\n") <= 0)
             goto err;
     }
     
-    /* als extra i2r wie bei admission?         
-    if (entry->namingAuthority != NULL) {
-            if (i2r_NAMING_AUTHORITY(method, entry->namingAuthority, bp, ind) <= 0)
-                goto err;
-        }
     if (procuration->signingFor != NULL) {
         SIGNING_FOR* signFor = (SIGNING_FOR*)procuration->signingFor;
-        
-        if (signFor.u->thirdPerson != NULL) {
-            if (BIO_printf(bp, "%*sXXX:\n", ind, "") <= 0
-                || ASN1_GENERAL_NAME_print(bp, signFor.u->thirdPerson) <= 0
-                || BIO_printf(bp, "\n") <= 0)
+
+        /*BIO_printf(bp, "%d", signFor->type);*/
+
+        switch(signFor->type) {
+            case 0: {
+                if (BIO_printf(bp, "%*sThird Person:\n", ind, "") <= 0
+                    || BIO_printf(bp, "%*s    ", ind, "") <= 0 /* test this */
+                    || GENERAL_NAME_print(bp, signFor->u.thirdPerson) <= 0)
                 goto err;
+
+                break;
+            }
+            case 1: {
+                ISSUER_SERIAL* issSer = (ISSUER_SERIAL*)signFor->u.certRef;
+
+                if (BIO_printf(bp, "%*sBase Certificate Reference: \n", ind, "") <= 0
+                    /*|| BIO_printf(bp, "%*s    ", ind, "") <= 0*/)
+                    goto err;
+
+                if (issSer->issuer != NULL) {
+                    if (BIO_printf(bp, "    %*sIssuer: ", ind, "") <= 0
+                        || GENERAL_NAME_print(bp, issSer->issuer) <= 0
+                        || BIO_printf(bp, "\n") <= 0)
+                        goto err;
+                }
+
+                if (issSer->serial != NULL) {
+                    if (BIO_printf(bp, "    %*sSerial Number: ", ind, "") <= 0
+                        || BIO_printf(bp, "%ld ", ASN1_INTEGER_get(issSer->serial)) <= 0
+                        || BIO_printf(bp, "\n") <= 0)
+                        goto err;
+                }
+            
+                if (issSer->issuerUID != NULL) {
+                    if (BIO_printf(bp, "    %*sIssuer UID: ", ind, "") <= 0
+                        || BIO_printf(bp, "%s", OPENSSL_buf2hexstr(issSer->issuerUID->data, issSer->issuerUID->length)) <= 0)
+                        goto err;
+                }
+
+                break;
+            }
         }
-        
-        if (signFor.u->certRef != NULL) {
-            if (BIO_printf(bp, "%*sXXX:\n", ind, "") <= 0
-                || XXX(bp, signFor.u->certRef) <= 0
-                || BIO_printf(bp, "\n") <= 0)
+
+/*
+        switch(signFor->type) {
+            case 0: {
+                if (BIO_printf(bp, "%*sThrd Person: ", ind, "") <= 0
+                    || GENERAL_NAME_print(bp, signFor->u.thirdPerson) <= 0
+                    || BIO_printf(bp, "\n") <= 0)
                 goto err;
-        }
-    } */
+
+                break;
+            }
+            case 1: {
+                ISSUER_SERIAL* issSer = (ISSUER_SERIAL*)signFor->u.certRef;
+
+                if (BIO_printf(bp, "%*sBase Certificate Reference: \n", ind, "") <= 0
+                    || BIO_printf(bp, "%*s    ", ind, "") <= 0)
+                    goto err;
+
+                if (issSer->issuer != NULL) {
+                    if (BIO_printf(bp, "%*sIssuer: ", ind, "") <= 0
+                        || GENERAL_NAME_print(bp, issSer->issuer) <= 0
+                        || BIO_printf(bp, "\n") <= 0)
+                        goto err;
+                }
+
+                if (issSer->serial != NULL) {
+                    if (BIO_printf(bp, "%*sSerial Number: ", ind, "") <= 0
+                        || BIO_printf(bp, "%ld ", ASN1_INTEGER_get(issSer->serial)) <= 0
+                        || BIO_printf(bp, "\n") <= 0)
+                        goto err;
+                }
+            
+                if (issSer->issuerUID != NULL) {
+                    if (BIO_printf(bp, "%*sIssuer UID: ", ind, "") <= 0
+                        || ASN1_STRING_print(bp, issSer->issuerUID) <= 0
+                        || BIO_printf(bp, "\n") <= 0)
+                        goto err;
+                }
+
+                break;
+            }
+            default: {
+                if (BIO_printf(bp, "%*sUnsupported Type", ind, "") <= 0)
+                goto err;
+
+                break;
+            } 
+        }*/
+    }
+
+    /* IssuerSerial ::= SEQUENCE { issuer GeneralNames, serial CertificateSerialNumber, issuerUID UniqueIdentifier OPTIONAL } */ 
     
     return 1;
 
@@ -445,7 +510,7 @@ const X509V3_EXT_METHOD v3_ext_declarationOfMajority = {
     NULL,
     NULL,
     NULL,
-    NULL, /*&i2r_PROCURATION_SYNTAX,*/
+    NULL,
     NULL,
     NULL
 };
@@ -465,7 +530,7 @@ const X509V3_EXT_METHOD v3_subjectDirectoryAttributes = {
     NULL,
     NULL,
     NULL,
-    NULL, /*&i2r_PROCURATION_SYNTAX,*/
+    NULL,
     NULL,
     NULL
 };
@@ -493,10 +558,8 @@ static int i2r_DATE_OF_CERTIFICATE_GENERATION(const struct v3_ext_method *method
     ASN1_GENERALIZEDTIME* genTime = (ASN1_GENERALIZEDTIME *)in;
     
     if (genTime != NULL) {
-        if (/*BIO_printf(bp, "%*sDate of Certificate Generation:\n", ind, "") <= 0
-            || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            || */ASN1_GENERALIZEDTIME_print(bp, genTime) <= 0 /*
-            || BIO_printf(bp, "\n") <= 0*/)
+        if (BIO_printf(bp, "%*s  ", ind, "") <= 0
+            || ASN1_GENERALIZEDTIME_print(bp, genTime) <= 0)
             goto err;
     }
     
@@ -522,17 +585,15 @@ const X509V3_EXT_METHOD v3_ext_icssn = {
     NULL,
     NULL
 };
- /* für mich zum test: OPENSSL_buf2hexstr(oct->data, oct->length) bei icssn in ctool */
+
 static int i2r_ICSSN(const struct v3_ext_method *method, void *in,
                                 BIO *bp, int ind)
 {
     ASN1_OCTET_STRING* serial = (ASN1_OCTET_STRING *)in;
     
     if (serial != NULL) {
-        if (/*BIO_printf(bp, "%*sICSSN Serial Number:\n", ind, "") <= 0
-            || BIO_printf(bp, "%*s  ", ind, "") <= 0
-            ||*/ ASN1_STRING_print(bp, serial) <= 0 /*
-            || BIO_printf(bp, "\n") <= 0*/)
+        if (BIO_printf(bp, "%*s  ", ind, "") <= 0
+            || ASN1_STRING_print(bp, serial) <= 0)
             goto err;
     }
     
