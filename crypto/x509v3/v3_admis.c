@@ -311,3 +311,5 @@ void PROFESSION_INFO_set0_registrationNumber(PROFESSION_INFO *pi, ASN1_PRINTABLE
 	ASN1_PRINTABLESTRING_free(pi->registrationNumber);
 	pi->registrationNumber = rn;
 }
+
+
