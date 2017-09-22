@@ -186,3 +186,5 @@ pod2htmd.tmp
 # Windows manifest files
 *.manifest
 doc-nits
+util/libcrypto.num
+include/openssl/x509v3.h
