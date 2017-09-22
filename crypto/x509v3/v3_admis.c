@@ -213,14 +213,14 @@ void ADMISSION_SYNTAX_set0_admissionAuthority(ADMISSION_SYNTAX *as, GENERAL_NAME
 	as->admissionAuthority = aa;
 }
 
-const GENERAL_NAME* ADMISSION_SYNTAX_get0_contentsOfAdmissions(const ADMISSION_SYNTAX *as)
+const STACK_OF(ADMISSIONS)* ADMISSION_SYNTAX_get0_contentsOfAdmissions(const ADMISSION_SYNTAX *as)
 {
 	return as->contentsOfAdmissions;
 }
 
 void ADMISSION_SYNTAX_set0_contentsOfAdmissions(ADMISSION_SYNTAX *as, STACK_OF(ADMISSIONS) *a)
 {
-	ADMISSIONS_free(a);
+	sk_ADMISSIONS_free(as->contentsOfAdmissions);
 	as->contentsOfAdmissions = a;
 }
 
@@ -253,7 +253,7 @@ const PROFESSION_INFOS* ADMISSIONS_get0_professionInfos(const ADMISSIONS *a)
 
 void ADMISSIONS_set0_professionInfos(ADMISSIONS *a, PROFESSION_INFOS *pi)
 {
-	PROFESSION_INFOS_free(a->professionInfos);
+	sk_PROFESSION_INFO_free(a->professionInfos);
 	a->professionInfos = pi;
 }
 
@@ -268,18 +268,7 @@ void PROFESSION_INFO_set0_addProfessionInfo(PROFESSION_INFO *pi, ASN1_OCTET_STRI
 	pi->addProfessionInfo = aos;
 }
 
-const PROFESSION_INFO* PROFESSION_INFO_get0_namingAuthority(const PROFESSION_INFO *pi)
-{
-	return pi->namingAuthority;
-}
-
-void PROFESSION_INFO_set0_namingAuthority(PROFESSION_INFO *pi, NAMING_AUTHORITY *na)
-{
-	NAMING_AUTHORITY_free(pi->namingAuthority);
-	pi->namingAuthority = na;
-}
-
-const PROFESSION_INFO* PROFESSION_INFO_get0_namingAuthority(const PROFESSION_INFO *pi)
+const NAMING_AUTHORITY* PROFESSION_INFO_get0_namingAuthority(const PROFESSION_INFO *pi)
 {
 	return pi->namingAuthority;
 }
